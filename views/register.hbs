@@ -1,8 +1,8 @@
-<h1>Formulario de Registro</h1>
+<h1 class="titulo">Formulario de Registro</h1>
 <form method="POST" action="/register">
     <div class="form-group">
         <label for="username">Usuario</label>
-        <input type="text" name="username" class="form-control" id="username" aria-describedby="emailHelp">
+        <input type="text" name="username" class="form-control" id="username" aria-describedby="emailHelp" required='true'>
     </div>
     <div class="form-group">
         <label for="email">Email</label>
@@ -11,11 +11,26 @@
     </div>
     <div class="form-group">
         <label for="senha">Senha</label>
-        <input type="password" name="senha" class="form-control" id="senha">
+        <input type="password" name="senha" class="form-control" id="senha" required='true'>
     </div>
     <div class="form-group">
         <label for="senha2">Confirmar Senha</label>
-        <input type="password" name="senha2" class="form-control" id="senha2">
+        <input type="password" name="senha2" class="form-control" id="senha2" required='true'>
     </div>
-    <button type="submit" class="btn btn-primary">Submit</button>
+    <button type="submit" id="submit" onclick="verificaSenhas" class="btn btn-primary">Registrar</button>
 </form>
+<script>
+    function verificaSenhas() {
+        debugger
+        alert('oi')
+        let button = document.getElementById('submit')
+        let senha1 = document.getElementById("senha");
+        let senha2 = document.getElementById("senha2");
+        if (senha1 != senha2) {
+            button.disabled = true;
+        }
+        else {
+            button.disabled = false;
+        }
+    }
+</script>

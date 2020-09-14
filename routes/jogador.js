@@ -5,4 +5,5 @@ const User = mongoose.model('User');
 require('../AUTH/index')
 var router = express.Router();
 
+
 module.exports = router;
